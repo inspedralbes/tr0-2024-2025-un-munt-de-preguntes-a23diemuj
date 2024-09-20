@@ -1,8 +1,8 @@
 let data;
 
-fetch('http://localhost/ProyectoTEST_Server/data.json')
+fetch('../back/getPreg.php')
   .then(response => response.json())
-  .then(data =>  {pintarPreguntas(data); console.log(data)});
+  .then(data => console.log(data[0].imagen));
 
 
 
@@ -12,7 +12,7 @@ let htmlString="";
 
 for (let index = 0; index < data.preguntes.length; index++) {
    
-   htmlString+= `<img src="${data.preguntes[index].imatge}" width='25%'> `;
+   htmlString+= `<img src="${[index].imagen}" width='25%'> `;
    htmlString+=`<br><br>`;
    htmlString+=`${data.preguntes[index].pregunta}<br>`;
    
