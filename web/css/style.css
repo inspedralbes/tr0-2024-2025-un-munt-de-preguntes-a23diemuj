@@ -1,0 +1,30 @@
+body{
+
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
+
+}
+img{
+
+    border-radius: 10px;
+
+
+}
+
+button{
+    color: white;
+    background-color: rebeccapurple;
+    border-radius: 10px;
+    border-color: white ;
+    margin: 3px;
+    padding: 8px;
+    
+}
+
+button:hover{
+    color: black;
+    background-color: rgb(0, 255, 234);
+
+}
+
