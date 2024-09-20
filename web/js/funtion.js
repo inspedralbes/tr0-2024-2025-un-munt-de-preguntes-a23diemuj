@@ -1,8 +1,14 @@
 let data;
+let arRespuestas=[];
 
 fetch('../back/getPreg.php')
   .then(response => response.json())
   .then(data => pintarPreguntas(data));
+
+
+
+ 
+
 
 
 
@@ -20,7 +26,7 @@ for (let index = 0; index < data.preguntes.length; index++) {
    for (let index1 = 0; index1 < data.preguntes[index].respostes.length; index1++) {
       let aux= data.preguntes[index].respostes[index1].etiqueta ;
 
-      htmlString+=`<button onclick="reaccion(${index},${index1} )"> ${aux} </button>`;
+      htmlString+=`<button onclick="reaccion(${index},${index1})"> ${aux} </button>`;
      
       if(index1%2!=0){
          htmlString+=`<br>`;
@@ -34,17 +40,21 @@ for (let index = 0; index < data.preguntes.length; index++) {
 }
 
 
-
-
 const divPartida= document.getElementById("partida");
    divPartida.innerHTML=htmlString;
-
+   for (let index = 0; index < data.preguntes.length; index++) {
+      arRespuestas.push(-1);
+      
+   }
 
 }
    
-function reaccion (pregunta, respuesta){
+function reaccion(pregunta, respuesta){
    
-   alert("Has presionado la opcion "+(respuesta+1)+" de la pregunta "+(pregunta+1));
+   arRespuestas[pregunta]=respuesta;
   
+
   }
+
+  
 
