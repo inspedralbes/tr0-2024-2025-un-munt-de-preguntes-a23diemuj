@@ -46,20 +46,20 @@ for ($i=0; $i < 10; $i++) {
 }
 
 
-echo "[";
+echo '{"preguntes" : [';
 foreach ($_SESSION["preguntas"] as $final => $indice) {
     echo '{
 
     "id": "'.$_SESSION["datos"]["preguntes"][$indice]["id"].'",
-    "imagen": "'.$_SESSION["datos"]["preguntes"][$indice]["imatge"].'",
     "pregunta": "'.$_SESSION["datos"]["preguntes"][$indice]["pregunta"].'",
-    "opciones":[   '; 
+    "respostes":[   '; 
 
 foreach ($_SESSION["datos"]["preguntes"][$indice]["respostes"] as $auxindice => $auxvalor) {
 
  echo '    
         {
-        "'.($auxindice+1).'": "'.$auxvalor["etiqueta"].'"
+        "id": "'.$auxindice.'",
+        "etiqueta": "'.$auxvalor["etiqueta"].'"
         }
        ';
 
@@ -67,10 +67,10 @@ foreach ($_SESSION["datos"]["preguntes"][$indice]["respostes"] as $auxindice => 
 echo ",";
 
        }
-
-
 }
-echo ']}';
+
+
+echo '], "imatge":"'.$_SESSION["datos"]["preguntes"][$indice]["imatge"].'"}';
 if( count( $_SESSION["preguntas"])  > $final +1){
     echo ",";
     
@@ -78,7 +78,8 @@ if( count( $_SESSION["preguntas"])  > $final +1){
 
 
 }
-echo "]";
+
+echo "]}";
 
 
 ?>

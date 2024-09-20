@@ -2,7 +2,7 @@ let data;
 
 fetch('../back/getPreg.php')
   .then(response => response.json())
-  .then(data => console.log(data[0].imagen));
+  .then(data => pintarPreguntas(data));
 
 
 
@@ -12,13 +12,13 @@ let htmlString="";
 
 for (let index = 0; index < data.preguntes.length; index++) {
    
-   htmlString+= `<img src="${[index].imagen}" width='25%'> `;
+   htmlString+= `<img src="${data.preguntes[index].imatge}" width='25%'> `;
    htmlString+=`<br><br>`;
    htmlString+=`${data.preguntes[index].pregunta}<br>`;
    
    
    for (let index1 = 0; index1 < data.preguntes[index].respostes.length; index1++) {
-      let aux= data.preguntes[index].respostes[index1].etiqueta;
+      let aux= data.preguntes[index].respostes[index1].etiqueta ;
 
       htmlString+=`<button onclick="reaccion(${index},${index1} )"> ${aux} </button>`;
      
