@@ -45,8 +45,25 @@ for ($i=0; $i < 10; $i++) {
 
 }
 
+$arr =[];
+$obj = new stdClass();
+$objAux = new stdClass();
+foreach ($_SESSION["preguntas"] as $final => $indice) {
 
-echo '{"preguntes" : [';
+$objAux->id = $_SESSION["datos"]["preguntes"][$indice]["id"];
+$objAux->pregunta =$_SESSION["datos"]["preguntes"][$indice]["pregunta"];
+$objAux->respostes = [];
+foreach ($_SESSION["datos"]["preguntes"][$indice]["respostes"] as $auxindice => $auxvalor) {
+
+$objAux->respostes.array_push()
+
+}
+
+
+}
+
+/*
+
 foreach ($_SESSION["preguntas"] as $final => $indice) {
     echo '{
 
@@ -80,6 +97,6 @@ if( count( $_SESSION["preguntas"])  > $final +1){
 }
 
 echo "]}";
-
+*/
 
 ?>

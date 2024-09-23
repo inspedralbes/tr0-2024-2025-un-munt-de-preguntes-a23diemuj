@@ -63,22 +63,18 @@ function reaccion(pregunta, respuesta){
 
 
 function enviarRespuestas(){
-   let data="[";
-
-   arRespuestas.forEach((element,index) =>  {
-     data+= '{"id":"'+element+'"}'; 
-
-      if(arRespuestas.length>index+1){
-         data+= ",";
-      }
-
+   let data= [];
+   arRespuestas.forEach(element =>  {
+      obj = {};
+      obj.id = element;
+      data.push(obj)
    });
 
-   data+="]"
+
 
    console.log(data)
 
-   fetch('../back/finalitza..php', {
+   fetch('../back/finalitza.php', {
       method: 'POST', // Método HTTP
       headers: {
         'Content-Type': 'application/json' // Indicamos que los datos son en formato JSON
