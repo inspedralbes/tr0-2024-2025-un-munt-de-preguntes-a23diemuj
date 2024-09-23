@@ -5,7 +5,7 @@ $datos = file_get_contents("./data.json");
 
 session_start();
 
-// generar aleatoriamente las preguntas, guardarla en una variable y muestra la primera pregunta
+// generar aleatoriamente las preguntas
 $_SESSION["datos"] = json_decode($datos,true);
 $_SESSION["preguntas"]=[];
 
@@ -44,59 +44,36 @@ for ($i=0; $i < 10; $i++) {
     }
 
 }
-
 $arr =[];
 $obj = new stdClass();
-$objAux = new stdClass();
+
+
 foreach ($_SESSION["preguntas"] as $final => $indice) {
+   
+$objAux = new stdClass();
 
 $objAux->id = $_SESSION["datos"]["preguntes"][$indice]["id"];
 $objAux->pregunta =$_SESSION["datos"]["preguntes"][$indice]["pregunta"];
 $objAux->respostes = [];
-foreach ($_SESSION["datos"]["preguntes"][$indice]["respostes"] as $auxindice => $auxvalor) {
-
-$objAux->respostes.array_push()
-
-}
-
-
-}
-
-/*
-
-foreach ($_SESSION["preguntas"] as $final => $indice) {
-    echo '{
-
-    "id": "'.$_SESSION["datos"]["preguntes"][$indice]["id"].'",
-    "pregunta": "'.$_SESSION["datos"]["preguntes"][$indice]["pregunta"].'",
-    "respostes":[   '; 
 
 foreach ($_SESSION["datos"]["preguntes"][$indice]["respostes"] as $auxindice => $auxvalor) {
 
- echo '    
-        {
-        "id": "'.$auxindice.'",
-        "etiqueta": "'.$auxvalor["etiqueta"].'"
-        }
-       ';
+    $objAuxi= new stdClass();
+    $objAuxi->id = $auxindice;
+    $objAuxi->etiqueta = $auxvalor["etiqueta"];
+    array_push($objAux->respostes, $objAuxi);
+}
+$objAux->imatge =$_SESSION["datos"]["preguntes"][$indice]["imatge"];
 
-       if( count( $_SESSION["datos"]["preguntes"][$indice]["respostes"])  > $auxindice +1){
-echo ",";
-
-       }
+array_push($arr,$objAux);
 }
 
+$obj->preguntes= $arr;
 
-echo '], "imatge":"'.$_SESSION["datos"]["preguntes"][$indice]["imatge"].'"}';
-if( count( $_SESSION["preguntas"])  > $final +1){
-    echo ",";
-    
-           }
+$obj=json_encode($obj);
+
+print_r($obj);
 
 
-}
-
-echo "]}";
-*/
 
 ?>

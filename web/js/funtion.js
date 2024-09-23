@@ -48,14 +48,27 @@ const divPartida= document.getElementById("partida");
    for (let index = 0; index < data.preguntes.length; index++) {
       arRespuestas.push(-1);
       htmlEstat.push("-");
+      
    }
-
+   document.getElementById("respuestas").innerHTML= htmlEstat;
 }
    
 function reaccion(pregunta, respuesta){
    
-   arRespuestas[pregunta]=respuesta;
-   htmlEstat[pregunta]="*"; 
+   if(htmlEstat[pregunta]=="*"){
+      arRespuestas[pregunta]=-1;
+      htmlEstat[pregunta]="-"; 
+
+   }else{
+      arRespuestas[pregunta]=respuesta;
+      htmlEstat[pregunta]="*"; 
+
+
+   }
+   
+
+
+
    const estat=document.getElementById("respuestas");
    estat.innerHTML=htmlEstat;
 
