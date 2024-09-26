@@ -8,9 +8,16 @@
 </head>
 <body> 
 
-    <button id="enviar" type="submit" onclick="enviarRespuestas()"> ENVIAR </button>
+   
     
     <h1>Juego de las preguntas</h1>
+    <button id="empezar" type="submit" onclick="PasarPreguntas()"> EMPEZAR </button>
+    <div id="prueba"></div>
+    
+    <button id="anterior" type="submit" onclick="RegregarPreguntas()" class="ocultar"> <- </button>
+    <button id="siguiente" type="submit" onclick="PasarPreguntas()" class="ocultar"> -></button>
+    <button id="enviar" type="submit" onclick="enviarRespuestas()" class="ocultar"> ENVIAR </button>
+
     <div id="respuestas"></div>
 
 

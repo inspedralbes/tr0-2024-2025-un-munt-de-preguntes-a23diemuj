@@ -20,6 +20,15 @@ let htmlString="";
 
 
 for (let index = 0; index < data.preguntes.length; index++) {
+   htmlString+="<div id='pregunta"+index+"' class='ocultar'>  </div>";   
+}
+
+document.getElementById("prueba").innerHTML=htmlString;
+htmlString="";
+
+
+
+for (let index = 0; index < data.preguntes.length; index++) {
    
    htmlString+= `<img src="${data.preguntes[index].imatge}" width='25%'> `;
    htmlString+=`<br><br>`;
@@ -37,22 +46,27 @@ for (let index = 0; index < data.preguntes.length; index++) {
       
    }
    htmlString+=`<br><br><br>`;
-  
+ 
+  document.getElementById("pregunta"+index).innerHTML=htmlString;;
+   
+   htmlString="";
   
    
 }
 
 
-const divPartida= document.getElementById("partida");
-   divPartida.innerHTML=htmlString;
    for (let index = 0; index < data.preguntes.length; index++) {
       arRespuestas.push(-1);
       htmlEstat.push("-");
       
    }
    document.getElementById("respuestas").innerHTML= htmlEstat;
-}
+
    
+}
+
+
+
 function reaccion(pregunta, respuesta){
    
    if(htmlEstat[pregunta]=="*"){
@@ -73,6 +87,55 @@ function reaccion(pregunta, respuesta){
    estat.innerHTML=htmlEstat;
 
   }
+
+
+let contador=0;
+
+function PasarPreguntas(){
+
+
+
+if (contador==0){
+document.getElementById("empezar").classList.add("ocultar");
+document.getElementById("siguiente").classList.replace("ocultar","mostrar");
+document.getElementById("anterior").classList.replace("ocultar","mostrar");
+}else{
+   document.getElementById("anterior").classList.replace("ocultar","mostrar");
+   document.getElementById("pregunta"+(contador-1)).classList.replace("mostrar","ocultar");
+}
+
+document.getElementById("pregunta"+contador).classList.replace("ocultar","mostrar");
+
+if(contador>htmlEstat.length-2){
+   document.getElementById("siguiente").classList.replace("mostrar","ocultar");
+   document.getElementById("enviar").classList.replace("ocultar","mostrar");
+   contador++;
+   console.log(contador)
+}else{
+
+   contador++;
+}
+}
+
+function RegregarPreguntas(){
+   contador--;
+ 
+   if(contador>htmlEstat.length-2){
+      document.getElementById("siguiente").classList.replace("ocultar","mostrar");
+      document.getElementById("enviar").classList.replace("mostrar","ocultar");
+   }
+
+   if(contador==1){
+   document.getElementById("anterior").classList.replace("mostrar","ocultar");
+   }
+
+
+
+   document.getElementById("pregunta"+contador).classList.replace("mostrar","ocultar");
+   document.getElementById("pregunta"+(contador-1)).classList.replace("ocultar","mostrar");
+   
+}
+
 
 
 function enviarRespuestas(){
