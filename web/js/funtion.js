@@ -38,7 +38,7 @@ for (let index = 0; index < data.preguntes.length; index++) {
    for (let index1 = 0; index1 < data.preguntes[index].respostes.length; index1++) {
       let aux= data.preguntes[index].respostes[index1].etiqueta ;
 
-      htmlString+=`<button onclick="reaccion(${index},${index1})"> ${aux} </button>`;
+      htmlString+=`<button id="${index}${index1}" onclick="reaccion(${index},${index1})"> ${aux} </button>`;
      
       if(index1%2!=0){
          htmlString+=`<br>`;
@@ -57,36 +57,97 @@ for (let index = 0; index < data.preguntes.length; index++) {
 
    for (let index = 0; index < data.preguntes.length; index++) {
       arRespuestas.push(-1);
-      htmlEstat.push("-");
+      htmlEstat.push(" ");
       
    }
-   document.getElementById("respuestas").innerHTML= htmlEstat;
+   
 
    
 }
 
+function iniciarTemporizador() {
+      let tiempoRestante = 30;
+      let intervalo; 
+        if (intervalo) return;
+
+        intervalo = setInterval(() => {
+            if (tiempoRestante > 0) {
+                tiempoRestante--; 
+                Progreso(false);
+            } else {
+                clearInterval(intervalo); 
+                alert("¡Tiempo terminado!");
+                intervalo = null; 
+            }
+        }, 1000); 
+    }
 
 
+
+let auxReaccion;
 function reaccion(pregunta, respuesta){
    
-   if(htmlEstat[pregunta]=="*"){
+   if(auxReaccion === pregunta.toString()+respuesta.toString()){
+
+      if(!(document.getElementById(pregunta.toString()+respuesta.toString()).classList.contains("presionado"))){
+      document.getElementById(pregunta.toString()+respuesta.toString()).classList.add("presionado");
+      arRespuestas[pregunta]=respuesta;
+      htmlEstat[pregunta]="*";
+     
+
+      }else{
+
+      document.getElementById(pregunta.toString()+respuesta.toString()).classList.remove("presionado");
       arRespuestas[pregunta]=-1;
       htmlEstat[pregunta]="-"; 
+     
+   }
 
    }else{
+      for (let index = 0; index < 4; index++) {
+         
+         if(document.getElementById(pregunta.toString()+index.toString()).classList.contains("presionado")){
+            document.getElementById(pregunta.toString()+index.toString()).classList.remove("presionado");
+            
+         }
+
+         
+      }
+
+      document.getElementById(pregunta.toString()+respuesta.toString()).classList.add("presionado");
       arRespuestas[pregunta]=respuesta;
       htmlEstat[pregunta]="*"; 
-
-
+    
    }
+
+ 
    
-
-
-
+  
+   auxReaccion=pregunta.toString()+respuesta.toString();
    const estat=document.getElementById("respuestas");
    estat.innerHTML=htmlEstat;
+   console.log(arRespuestas)
 
   }
+
+function Progreso(params) {
+   const aux=document.getElementById("barra")
+   let valor=parseInt(aux.value, 10);
+
+   if(params){
+      if(valor<100 ){
+         aux.value+=10;
+
+      }
+   }else{
+      if(valor>0){
+         aux.value-=1;
+      }
+
+   }
+
+}
+
 
 
 let contador=0;
@@ -96,9 +157,11 @@ function PasarPreguntas(){
 
 
 if (contador==0){
+document.getElementById("respuestas").innerHTML= htmlEstat;
 document.getElementById("empezar").classList.add("ocultar");
 document.getElementById("siguiente").classList.replace("ocultar","mostrar");
-document.getElementById("anterior").classList.replace("ocultar","mostrar");
+document.getElementById("barra").classList.replace("ocultar","mostrar");
+
 }else{
    document.getElementById("anterior").classList.replace("ocultar","mostrar");
    document.getElementById("pregunta"+(contador-1)).classList.replace("mostrar","ocultar");
@@ -110,7 +173,7 @@ if(contador>htmlEstat.length-2){
    document.getElementById("siguiente").classList.replace("mostrar","ocultar");
    document.getElementById("enviar").classList.replace("ocultar","mostrar");
    contador++;
-   console.log(contador)
+  
 }else{
 
    contador++;

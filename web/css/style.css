@@ -2,15 +2,30 @@ body{
 
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-   
+    background-color: black;
+
+}
+#body{
+
+    border: 1px white solid;
 
 }
 img{
 
     border-radius: 10px;
-
+    border: 1px white solid;
 
 }
+
+.titulo{
+    text-shadow: 
+      -1px -1px 0 white,  
+      1px -1px 0 white,
+      -1px 1px 0 white,
+      1px 1px 0 white; 
+
+}
+
 
 button{
     color: white;
@@ -38,5 +53,10 @@ button:hover{
 
     display: block, inline-block;
    
+}
+.presionado{
+    background-color: rgb(143, 0, 148);
+    color: white;
+
 }
 
