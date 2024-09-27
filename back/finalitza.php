@@ -4,22 +4,10 @@ session_start();
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    $datosRecibidos= file_get_contents('php://input');
-
-
-    $respuestas= json_decode($datosRecibidos,true);
-
-
-    comprobarRespuesta($respuestas);
- 
     
-
-
-
-        
-
-
-
+    $datosRecibidos= file_get_contents('php://input');
+    $respuestas= json_decode($datosRecibidos,true);
+    comprobarRespuesta($respuestas);
 }
 
 
@@ -49,5 +37,5 @@ function comprobarRespuesta($datos){
     
     }
 
-
+session_destroy();
 ?>
