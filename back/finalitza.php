@@ -28,7 +28,7 @@ function comprobarRespuesta($datos){
     $obj->correctas = $correctas;
     $obj->totales = $totales;
 
-    print_r(json_encode($obj));
+    print_r(json_encode($_SESSION["preguntas"]));
     
     
 

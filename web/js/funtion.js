@@ -9,9 +9,6 @@ fetch('../back/getPreg.php')
 
 
 
- 
-
-  
 
 
 function pintarPreguntas(data){
@@ -38,7 +35,7 @@ for (let index = 0; index < data.preguntes.length; index++) {
    for (let index1 = 0; index1 < data.preguntes[index].respostes.length; index1++) {
       let aux= data.preguntes[index].respostes[index1].etiqueta ;
 
-      htmlString+=`<button id="${index}${index1}" onclick="reaccion(${index},${index1})"> ${aux} </button>`;
+      htmlString+=`<button id="${index}${index1}" class="btn" data-idpregunta="${index}" data-idrespuesta="${index1}"> ${aux} </button>`;
      
       if(index1%2!=0){
          htmlString+=`<br>`;
@@ -62,7 +59,22 @@ for (let index = 0; index < data.preguntes.length; index++) {
    }
    
 
-   
+  
+   const buttones = document.querySelectorAll('.btn');
+
+   buttones.forEach(botones => {
+      
+     botones.addEventListener('click', function() {
+     
+       const idRespuesta = this.getAttribute('data-idrespuesta');
+       const idPregunta = this.getAttribute('data-idpregunta');
+       
+      reaccion(parseInt(idPregunta),parseInt(idRespuesta) );
+       
+     });
+   });  
+
+
 }
 
 function iniciarTemporizador() {
@@ -161,6 +173,7 @@ document.getElementById("respuestas").innerHTML= htmlEstat;
 document.getElementById("empezar").classList.add("ocultar");
 document.getElementById("siguiente").classList.replace("ocultar","mostrar");
 document.getElementById("barra").classList.replace("ocultar","mostrar");
+//iniciarTemporizador();
 
 }else{
    document.getElementById("anterior").classList.replace("ocultar","mostrar");
