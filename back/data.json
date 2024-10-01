@@ -22,7 +22,7 @@
             }
          ],
          "resposta_correcta":1,
-         "imatge":"https://runrun.es/wp-content/uploads/2014/07/tjMZ4RBLhvk670gYJPxIN8SBfnB.jpg"
+         "imatge":"../back/imagenes/0.jpg"
       },
       {
          "id":1,
@@ -46,7 +46,7 @@
             }
          ],
          "resposta_correcta":1,
-         "imatge":"https://m.media-amazon.com/images/S/pv-target-images/5d258a5a2f01bbfbf6e8a591ad23f6dc3374f1fe7b692aa5a8ebce5ba7c91ff0.jpg"
+         "imatge":"../back/imagenes/1.jpg"
       },
       {
          "id":2,
@@ -70,7 +70,7 @@
             }
          ],
          "resposta_correcta":0,
-         "imatge":"https://www.prensalibre.com/wp-content/uploads/2021/03/matrix_b.jpg"
+         "imatge":"../back/imagenes/2.jpg"
       },
       {
          "id":3,
@@ -94,7 +94,7 @@
             }
          ],
          "resposta_correcta":3,
-         "imatge":"https://hollywoodsuite.ca/wp-content/uploads/poster/HS903339_poster_1920_1080.jpg"
+         "imatge":"../back/imagenes/3.jpg"
       },
       {
          "id":4,
@@ -118,7 +118,7 @@
             }
          ],
          "resposta_correcta":3,
-         "imatge":"https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/01/titanic-2577593.jpg"
+         "imatge":"../back/imagenes/4.jpg"
       },
       {
          "id":5,
@@ -142,8 +142,8 @@
             }
          ],
          "resposta_correcta":2,
-         "imatge":"https://hips.hearstapps.com/hmg-prod/images/1202186-copia-64f056b7a8612.jpg"
-      },
+         "imatge":"../back/imagenes/5.jpg"  
+       },
       {
          "id":6,
          "pregunta":"En quin any es va estrenar la pel·lícula 'Cast Away'?",
@@ -166,7 +166,7 @@
             }
          ],
          "resposta_correcta":3,
-         "imatge":"https://drcindychan.com/wp-content/uploads/2020/08/b3dc56c83272b4e325ebc5a6cd0ecf7e.jpg"
+         "imatge":"../back/imagenes/6.jpg"
       },
       {
          "id":7,
@@ -190,7 +190,7 @@
             }
          ],
          "resposta_correcta":2,
-         "imatge":"https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/esensi/2023/09/the-avengers.jpg"
+       "imatge":"../back/imagenes/7.jpg"
       },
       {
          "id":8,
@@ -214,7 +214,7 @@
             }
          ],
          "resposta_correcta":3,
-         "imatge":"https://images.cdn.prd.api.discomax.com/2023/05/05/be192083-0dfc-3df5-bba2-67725ab6b0fc.jpeg"
+       "imatge":"../back/imagenes/8.jpg"
       },
       {
          "id":9,
@@ -238,7 +238,7 @@
             }
          ],
          "resposta_correcta":3,
-         "imatge":"https://i.blogs.es/b817f8/budapest_hotel/450_1000.jpg"
+          "imatge":"../back/imagenes/9.jpg"
       },
       {
          "id":10,
@@ -262,7 +262,7 @@
             }
          ],
          "resposta_correcta":1,
-         "imatge":"https://media.vandalsports.com/i/640x360/12-2021/2021129113822_1.jpg"
+          "imatge":"../back/imagenes/10.jpg"
       },
       {
          "id":11,
@@ -286,7 +286,7 @@
             }
          ],
          "resposta_correcta":0,
-         "imatge":"https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2020/07/hipertextual-diez-anos-inception-extrana-mirada-nolan-sobre-realidad-siguevigente-2020650351-scaled.jpg"
+         "imatge":"../back/imagenes/11.jpg"
       },
       {
          "id":12,
@@ -310,7 +310,7 @@
             }
          ],
          "resposta_correcta":0,
-         "imatge":"https://www.blogdemaio.com.br/wp-content/uploads/2020/07/interstellar.jpg"
+         "imatge":"../back/imagenes/12.jpg"
       },
       {
          "id":13,
@@ -334,7 +334,7 @@
             }
          ],
          "resposta_correcta":1,
-         "imatge":"https://upload.wikimedia.org/wikipedia/en/7/7e/The_Social_Network_poster.jpg"
+           "imatge":"../back/imagenes/13.jpg"
       },
       {
          "id":14,
@@ -358,7 +358,7 @@
             }
          ],
          "resposta_correcta":0,
-         "imatge":"https://www.quever.news/u/fotografias/m/2020/8/25/fotografia/60649/que-ver-poster-mad-max-fury-road.jpg"
+          "imatge":"../back/imagenes/14.jpg"
       },
       {
          "id":15,
@@ -382,7 +382,7 @@
             }
          ],
          "resposta_correcta":1,
-         "imatge":"https://www.zonadebatalla.com/wp-content/uploads/2019/07/Dunkirk.jpg"
+          "imatge":"../back/imagenes/15.jpg"
       },
       {
          "id":16,
@@ -406,7 +406,7 @@
             }
          ],
          "resposta_correcta":1,
-         "imatge":"https://resizing.flixster.com/WdB13w2pRlYhxkPVFKM9mzzb_0U=/fit-in/400x600/v2/https://flxt.tmsimg.com/assets/p12617613_p_v10_aa.jpg"
+          "imatge":"../back/imagenes/16.jpg"
       },
       {
          "id":17,
@@ -430,55 +430,55 @@
             }
          ],
          "resposta_correcta":0,
-         "imatge":"https://upload.wikimedia.org/wikipedia/en/a/a6/La_La_Land.png"
+          "imatge":"../back/imagenes/17.jpg"
       },
       {
-         "id":19,
+         "id":18,
          "pregunta":"En quin any es va estrenar la pel·lícula 'Pulp Fiction'?",
          "respostes":[
             {
-               "id":1,
+               "id":0,
                "etiqueta":"1994"
             },
             {
-               "id":2,
+               "id":1,
                "etiqueta":"1993"
             },
             {
-               "id":3,
+               "id":2,
                "etiqueta":"1995"
             },
             {
-               "id":4,
+               "id":3,
                "etiqueta":"1996"
             }
          ],
-         "resposta_correcta":1,
-         "imatge":"https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2023/07/pulp-fiction-3089782.jpg"
+         "resposta_correcta":0,
+          "imatge":"../back/imagenes/18.jpg"
       },
       {
-         "id":20,
-         "pregunta":"En quin any es va estrenar la pel·lícula 'Interstellar'?",
+         "id":19,
+         "pregunta":"En quin any es va estrenar la pel·lícula 'Super Mario Bros.: la película'?",
          "respostes":[
             {
+               "id":0,
+               "etiqueta":"2022"
+            },
+            {
                "id":1,
-               "etiqueta":"2014"
+               "etiqueta":"2023"
             },
             {
                "id":2,
-               "etiqueta":"2013"
+               "etiqueta":"2024"
             },
             {
                "id":3,
-               "etiqueta":"2015"
-            },
-            {
-               "id":4,
-               "etiqueta":"2016"
+               "etiqueta":"2021"
             }
          ],
          "resposta_correcta":1,
-         "imatge":"https://www.mubis.es/media/users/7350/103803/mi-critica-de-interstellar-u-final-estupendo-para-una-obra-maravillosa-original.jpg"
+           "imatge":"../back/imagenes/19.jpg"
       }
       
    ]

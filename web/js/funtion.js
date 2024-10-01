@@ -29,7 +29,7 @@ for (let index = 0; index < data.preguntes.length; index++) {
    
    htmlString+= `<img src="${data.preguntes[index].imatge}" width='25%'> `;
    htmlString+=`<br><br>`;
-   htmlString+=`${data.preguntes[index].pregunta}<br>`;
+   htmlString+=`<p>${data.preguntes[index].pregunta}</p><br>`;
    
    
    for (let index1 = 0; index1 < data.preguntes[index].respostes.length; index1++) {
@@ -77,7 +77,10 @@ for (let index = 0; index < data.preguntes.length; index++) {
 
 }
 
-function iniciarTemporizador() {
+function iniciarTemporizador(params) {
+
+
+
       let tiempoRestante = 30;
       let intervalo; 
         if (intervalo) return;
@@ -90,6 +93,8 @@ function iniciarTemporizador() {
                 clearInterval(intervalo); 
                 alert("¡Tiempo terminado!");
                 intervalo = null; 
+                enviarRespuestas();
+
             }
         }, 1000); 
     }
@@ -138,7 +143,7 @@ function reaccion(pregunta, respuesta){
    auxReaccion=pregunta.toString()+respuesta.toString();
    const estat=document.getElementById("respuestas");
    estat.innerHTML=htmlEstat;
-   console.log(arRespuestas)
+   
 
   }
 
@@ -173,7 +178,7 @@ document.getElementById("respuestas").innerHTML= htmlEstat;
 document.getElementById("empezar").classList.add("ocultar");
 document.getElementById("siguiente").classList.replace("ocultar","mostrar");
 document.getElementById("barra").classList.replace("ocultar","mostrar");
-//iniciarTemporizador();
+iniciarTemporizador();
 
 }else{
    document.getElementById("anterior").classList.replace("ocultar","mostrar");
@@ -212,9 +217,31 @@ function RegregarPreguntas(){
    
 }
 
+function ocultarTodo() {
 
+   document.getElementById("enviar").classList.replace("mostrar","ocultar");
+   document.getElementById("anterior").classList.replace("mostrar","ocultar");
+   document.getElementById("titulo").classList.replace("titulo","ocultar");
+   document.getElementById("pregunta"+(contador-1)).classList.replace("mostrar","ocultar");
+
+}
+
+
+
+function pantallaFinal(params) {
+   correctas=params.correctas;
+   totales=params.totales;
+   html="";
+  
+  html+=`<h1 class="titulo"> Resultados </h1> <br>`; 
+  html+=`<p>Preguntas Correctas: ${correctas}</p> <br>`;
+  html+=`<p>Preguntas Totales: ${totales}</p>`;
+  document.getElementById("pantallaFinal").innerHTML=html;
+
+}
 
 function enviarRespuestas(){
+   ocultarTodo();
    let data= [];
    arRespuestas.forEach(element =>  {
       obj = {};
@@ -224,7 +251,7 @@ function enviarRespuestas(){
 
 
 
-   console.log(data)
+  
 
    fetch('../back/finalitza.php', {
       method: 'POST', // Método HTTP
@@ -232,7 +259,7 @@ function enviarRespuestas(){
         'Content-Type': 'application/json' // Indicamos que los datos son en formato JSON
       },
       body: JSON.stringify(data) // Convertimos los datos a JSON antes de enviarlos
-    }).then(respuesta => respuesta.json()).then( datos => console.log(datos))
+    }).then(respuesta => respuesta.json()).then( datos => pantallaFinal(datos))
 
 
 

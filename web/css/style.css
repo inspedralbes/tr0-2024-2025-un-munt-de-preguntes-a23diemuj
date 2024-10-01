@@ -3,12 +3,16 @@ body{
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: black;
-
+    
 }
 #body{
 
     border: 1px white solid;
 
+}
+p{
+
+    color: white;
 }
 img{
 

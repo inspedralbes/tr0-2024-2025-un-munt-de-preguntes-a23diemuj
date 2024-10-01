@@ -8,6 +8,7 @@ session_start();
 // generar aleatoriamente las preguntas
 $_SESSION["datos"] = json_decode($datos,true);
 $_SESSION["preguntas"]=[];
+$_SESSION["respuestas"]=[];
 
 
 
@@ -64,7 +65,7 @@ foreach ($_SESSION["datos"]["preguntes"][$indice]["respostes"] as $auxindice => 
     array_push($objAux->respostes, $objAuxi);
 }
 $objAux->imatge =$_SESSION["datos"]["preguntes"][$indice]["imatge"];
-
+array_push($_SESSION["respuestas"],$_SESSION["datos"]["preguntes"][$indice]["resposta_correcta"]  );
 array_push($arr,$objAux);
 }
 
