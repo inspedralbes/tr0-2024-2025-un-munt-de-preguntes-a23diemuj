@@ -27,7 +27,7 @@ htmlString="";
 
 for (let index = 0; index < data.preguntes.length; index++) {
    
-   htmlString+= `<img src="${data.preguntes[index].imatge}" width='25%'> `;
+   htmlString+= `<img src="${data.preguntes[index].imatge}" width='50%'> `;
    htmlString+=`<br><br>`;
    htmlString+=`<p>${data.preguntes[index].pregunta}</p><br>`;
    
@@ -57,8 +57,11 @@ for (let index = 0; index < data.preguntes.length; index++) {
       htmlEstat.push(" ");
       
    }
-   
-
+document.getElementById("empezar").addEventListener("click", PasarPreguntas); 
+document.getElementById("enviar").addEventListener("click", enviarRespuestas);   
+document.getElementById("siguiente").addEventListener("click", PasarPreguntas);
+document.getElementById("anterior").addEventListener("click", RegregarPreguntas);
+document.getElementById("reiniciar").addEventListener("click", aux => location.reload());
   
    const buttones = document.querySelectorAll('.btn');
 
@@ -76,6 +79,7 @@ for (let index = 0; index < data.preguntes.length; index++) {
 
 
 }
+
 
 function iniciarTemporizador(params) {
 
@@ -176,6 +180,7 @@ function PasarPreguntas(){
 if (contador==0){
 document.getElementById("respuestas").innerHTML= htmlEstat;
 document.getElementById("empezar").classList.add("ocultar");
+document.getElementById("titulo").classList.replace("titulo","ocultar");
 document.getElementById("siguiente").classList.replace("ocultar","mostrar");
 document.getElementById("barra").classList.replace("ocultar","mostrar");
 iniciarTemporizador();
@@ -221,8 +226,9 @@ function ocultarTodo() {
 
    document.getElementById("enviar").classList.replace("mostrar","ocultar");
    document.getElementById("anterior").classList.replace("mostrar","ocultar");
-   document.getElementById("titulo").classList.replace("titulo","ocultar");
+   document.getElementById("siguiente").classList.replace("mostrar","ocultar");
    document.getElementById("pregunta"+(contador-1)).classList.replace("mostrar","ocultar");
+   document.getElementById("barra").classList.add("ocultar");
 
 }
 
@@ -237,6 +243,7 @@ function pantallaFinal(params) {
   html+=`<p>Preguntas Correctas: ${correctas}</p> <br>`;
   html+=`<p>Preguntas Totales: ${totales}</p>`;
   document.getElementById("pantallaFinal").innerHTML=html;
+  document.getElementById("reiniciar").classList.replace("ocultar","mostrar")
 
 }
 

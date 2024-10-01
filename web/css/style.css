@@ -8,8 +8,14 @@ body{
 #body{
 
     border: 1px white solid;
-
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 2%;
+    padding-bottom: 1%;
+   
 }
+
+
 p{
 
     color: white;
