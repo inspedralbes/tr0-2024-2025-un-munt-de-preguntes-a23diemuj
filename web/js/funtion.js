@@ -83,7 +83,7 @@ document.getElementById("reiniciar").addEventListener("click", aux => location.r
 
 function iniciarTemporizador(params) {
 
-
+   if(params){
 
       let tiempoRestante = 30;
       let intervalo; 
@@ -101,6 +101,8 @@ function iniciarTemporizador(params) {
 
             }
         }, 1000); 
+
+      }
     }
 
 
@@ -248,6 +250,7 @@ function pantallaFinal(params) {
 }
 
 function enviarRespuestas(){
+   iniciarTemporizador(false);
    ocultarTodo();
    let data= [];
    arRespuestas.forEach(element =>  {
