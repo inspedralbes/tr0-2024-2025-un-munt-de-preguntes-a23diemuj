@@ -7,44 +7,9 @@ session_start();
 
 // generar aleatoriamente las preguntas
 $_SESSION["datos"] = json_decode($datos,true);
-$_SESSION["preguntas"]=[];
 $_SESSION["respuestas"]=[];
 
 
-
-
-for ($i=0; $i < 10; $i++) { 
-    
-    $num=rand(0, 19);  
-    $verificar=null;
-
-    foreach ($_SESSION["preguntas"] as $key) {
-        
-        if($key == $num){
-           $verificar=true;
-       
-          $i--;
-          break;
-
-        }
-        else{
-            $verificar=false;
-
-        }
-        
-    }
-
-
-
-    if($verificar==false){
-        array_push($_SESSION["preguntas"],$num);
-
-        
-        
-        
-    }
-
-}
 $arr =[];
 $obj = new stdClass();
 
@@ -59,7 +24,7 @@ if ($result->num_rows > 0) {
         $aux=0;
         $objAux = new stdClass();
         $objAux->id = $row["id"];
-        $objAux->pregunta =$row["pregunta"];
+        $objAux->pregunta = $row["pregunta"];
         $objAux->respostes = [];
         
         for ($i=0; $i < 4; $i++) { 
