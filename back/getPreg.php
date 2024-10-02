@@ -49,7 +49,7 @@ $arr =[];
 $obj = new stdClass();
 
 
-$sql = "SELECT * FROM preguntas";
+$sql = "SELECT * FROM preguntas ORDER BY RAND() LIMIT 10;" ;
 
 $result = $conn->query($sql);
 
