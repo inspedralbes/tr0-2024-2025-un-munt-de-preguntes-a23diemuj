@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="./css/style.css">
+  
+</head>
+<body>
+    <h1>CRUD</h1>
+    <button id="add">Añadir pregunta</button>
+    <button id="edit">Editar pregunta</button>
+    <button id="rem">Eliminar pregunta</button>
+    <button id="all">Ver todas las preguntas</button>
+    
+    
+
+
+    <div id="alldiv" class="ocultar" > 
+        <table id="tabla" border="1" > 
+            <tr>
+                <th>ID</th>
+                <th>Pregunta</th>
+                <th>Respuesta 0</th>
+                <th>Respuesta 1</th>
+                <th>Respuesta 2</th>
+                <th>Respuesta 3</th>
+                <th>Respuesta Correcta</th>
+                <th>Imagen</th>
+
+                
+            </tr>
+
+
+        </table>
+
+
+    </div>
+
+
+
+<div id="adddiv" class="ocultar">
+    <form action="">   
+    <label for="pregunta">Pregunta: </label><br>
+    <input type="text" id="pregunta" name="pregunta" required><br><br>
+
+   
+    <label for="resposta_0">Respuesta 0: </label><br>
+    <input type="text" id="resposta_0" name="resposta_0" required><br><br>
+
+   
+    <label for="resposta_1">Respuesta 1: </label><br>
+    <input type="text" id="resposta_1" name="resposta_1" required><br><br>
+
+ 
+    <label for="resposta_2">Respuesta 2: </label><br>
+    <input type="text" id="resposta_2" name="resposta_2" required><br><br>
+
+   
+    <label for="resposta_3">Respuesta 3: </label><br>
+    <input type="text" id="resposta_3" name="resposta_3" required><br><br>
+
+    <label for="imagen">Ruta Imagen: </label><br>
+    <input type="text" id="imagen" name="imagen" accept="imagen" required><br><br>
+
+    <input type="submit" id="enviar" value="Enviar">
+    </form>
+
+</div>
+
+
+
+<div id="editdiv">
+
+
+
+
+</div>
+
+
+    <script src="./js/funtion.js"></script>
+</body>
+</html>
