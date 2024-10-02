@@ -83,7 +83,7 @@ document.getElementById("reiniciar").addEventListener("click", aux => location.r
 
 function iniciarTemporizador(params) {
 
-   if(params){
+   if(params== true){
 
       let tiempoRestante = 30;
       let intervalo; 
