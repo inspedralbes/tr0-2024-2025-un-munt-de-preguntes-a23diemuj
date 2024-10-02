@@ -56,40 +56,28 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        $row["id"].
-        $row["pregunta"].
-        $row["resposta_0"].
-        $row["resposta_1"].
-        $row["resposta_2"].
-        $row["resposta_3"].
-        $row["resposta_correcta"].
-        $row["imatge"];
+        $aux=0;
+        $objAux = new stdClass();
+        $objAux->id = $row["id"];
+        $objAux->pregunta =$row["pregunta"];
+        $objAux->respostes = [];
+        
+        for ($i=0; $i < 4; $i++) { 
+            $objAuxi= new stdClass();
+            $objAuxi->id = $i;
+            $objAuxi->etiqueta = $row["resposta_".strval($i)];
+            array_push($objAux->respostes, $objAuxi);
+        }
+        
+        array_push($_SESSION["respuestas"],$row["resposta_correcta"]);
+        $objAux->imatge =$row["imatge"];
+        array_push($arr,$objAux);
     }
+    $obj->preguntes= $arr;
+
 } else {
     echo "0 resultados";
 }
-
-foreach ($_SESSION["preguntas"] as $final => $indice) {
-   
-    $objAux = new stdClass();
-    
-    $objAux->id = $_SESSION["datos"]["preguntes"][$indice]["id"];
-    $objAux->pregunta =$_SESSION["datos"]["preguntes"][$indice]["pregunta"];
-    $objAux->respostes = [];
-    
-    foreach ($_SESSION["datos"]["preguntes"][$indice]["respostes"] as $auxindice => $auxvalor) {
-    
-        $objAuxi= new stdClass();
-        $objAuxi->id = $auxindice;
-        $objAuxi->etiqueta = $auxvalor["etiqueta"];
-        array_push($objAux->respostes, $objAuxi);
-    }
-    $objAux->imatge =$_SESSION["datos"]["preguntes"][$indice]["imatge"];
-    array_push($_SESSION["respuestas"],$_SESSION["datos"]["preguntes"][$indice]["resposta_correcta"]  );
-    array_push($arr,$objAux);
-    }
-    
-    $obj->preguntes= $arr;
 
 
 /*
