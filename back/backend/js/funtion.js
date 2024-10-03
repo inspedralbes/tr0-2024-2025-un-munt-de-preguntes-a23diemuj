@@ -27,12 +27,12 @@ fetch('./php/ver.php')
 
             document.getElementById("tabla").innerHTML=tabla;   
 
-        data.forEach(valor => {
+        data.forEach(valor =>  {
             
            
             tr="<tr>";   
-            tr+=`<td><button id="editar" value="${valor.id}"> Editar</button></td>`;
-            tr+=`<td><button id="eliminar" value="${valor.id}"> Eliminar</button></td>`;
+            tr+=`<td><button name="edit" value="${valor.id}"> Editar</button></td>`;
+            tr+=`<td><button name="rem" value="${valor.id}"> Eliminar</button></td>`;
             tr+=`<td>${valor.id} </td>`;
             tr+=`<td>${valor.pregunta} </td>`;
             tr+=`<td>${valor.resposta_0} </td>`;
@@ -46,7 +46,12 @@ fetch('./php/ver.php')
 
         });  
       
+        document.getElementsByName("rem").forEach(element => {
+            element.addEventListener("click", borrar())
+        });
 
+
+       
 
     }
 
@@ -59,12 +64,26 @@ document.getElementById("add").addEventListener("click", () =>{
     document.getElementById("alldiv").classList.replace("mostrar", "ocultar");  
     document.getElementById("add").classList.replace( "mostrar","ocultar");  
     document.getElementById("all").classList.replace("ocultar", "mostrar");  
-
+    
 
 
 });
 
 
+
+
+function borrar() {
+
+document.getElementById("alldiv").classList.replace("mostrar", "ocultar");
+document.getElementById("add").classList.replace( "mostrar","ocultar");  
+document.getElementById("remdiv").classList.replace("ocultar", "mostrar");
+
+
+
+
+
+
+}
 
 document.getElementById("all").addEventListener("click", () => 
     {document.getElementById("alldiv").classList.replace("ocultar", "mostrar");
