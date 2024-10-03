@@ -83,7 +83,7 @@ document.getElementById("reiniciar").addEventListener("click", aux => location.r
 
 function iniciarTemporizador(params) {
 
-   if(params== true){
+   if(params==true){
 
       let tiempoRestante = 30;
       let intervalo; 
@@ -185,7 +185,7 @@ document.getElementById("empezar").classList.add("ocultar");
 document.getElementById("titulo").classList.replace("titulo","ocultar");
 document.getElementById("siguiente").classList.replace("ocultar","mostrar");
 document.getElementById("barra").classList.replace("ocultar","mostrar");
-iniciarTemporizador();
+iniciarTemporizador(true);
 
 }else{
    document.getElementById("anterior").classList.replace("ocultar","mostrar");
