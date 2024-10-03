@@ -1,6 +1,11 @@
 inicio();
 
 function inicio(){
+reiniciar();
+document.getElementById("alldiv").classList.replace("ocultar", "mostrar");
+        document.getElementById("all").classList.replace("mostrar", "ocultar");  
+        document.getElementById("add").classList.replace( "ocultar","mostrar"); 
+        document.getElementById("adddiv").classList.replace("mostrar", "ocultar"); 
 fetch('./php/ver.php')
     .then(response => response.json())
     .then(data => verPreg(data));
@@ -73,16 +78,71 @@ fetch('./php/ver.php')
 
 function edit() {
     
+    fetch('./php/edit.php?select='+this.value)
+    .then(response => response.json())
+    .then(data =>{ 
+
+    document.getElementById("pregunta").value = data.pregunta;
+    document.getElementById("resposta_0").value = data.resposta_0;
+    document.getElementById("resposta_1").value = data.resposta_1;
+    document.getElementById("resposta_2").value = data.resposta_2;
+    document.getElementById("resposta_3").value = data.resposta_3;
+    document.getElementById("resposta_correcta").value = data.resposta_correcta;
+    document.getElementById("imatge").value = data.imatge;
+    document.getElementById("adddiv").classList.replace("ocultar", "mostrar"); 
+    document.getElementById("Editar").classList.replace("ocultar", "mostrar");   
+    document.getElementById("Enviar").classList.add("ocultar");  
+    document.getElementById("alldiv").classList.replace("mostrar", "ocultar");     
+    document.getElementById("Editar").value=this.value;    
+
+
+
+    } );
+
+
 }
 
 
+document.getElementById("Editar").addEventListener("click", editar);
+
+function editar(){
+    let pregunta = document.getElementById("pregunta").value;
+    let resposta_0 = document.getElementById("resposta_0").value;
+    let resposta_1 = document.getElementById("resposta_1").value;
+    let resposta_2 = document.getElementById("resposta_2").value;
+    let resposta_3 = document.getElementById("resposta_3").value;
+    let resposta_correcta = document.getElementById("resposta_correcta").value;
+    let imatge = document.getElementById("imatge").value;
+    
+    fetch('./php/edit.php?update='+this.value+'&pregunta=' + pregunta +'&resposta_0=' + resposta_0 +'&resposta_1=' + resposta_1 +
+        '&resposta_2=' + resposta_2 +
+        '&resposta_3=' + resposta_3 +
+        '&resposta_correcta=' + resposta_correcta +
+        '&imatge=' + imatge)
+    .then(response => response.json())
+    .then(data =>{alert(data), inicio()} );
+    
+
+
+
+}
+
+function reiniciarForm(){
+
+
+
+
+}
+
 
 document.getElementById("add").addEventListener("click", () =>{
-
+    document.getElementById("Editar").classList.replace("mostrar", "ocultar");  
+    document.getElementById("Enviar").classList.replace("ocultar", "mostrar");  
     document.getElementById("adddiv").classList.replace("ocultar", "mostrar");  
     document.getElementById("alldiv").classList.replace("mostrar", "ocultar");  
     document.getElementById("add").classList.replace( "mostrar","ocultar");  
     document.getElementById("all").classList.replace("ocultar", "mostrar");  
+    reiniciar();
     
 
 
@@ -118,7 +178,7 @@ document.getElementById("all").addEventListener("click", () =>
         document.getElementById("all").classList.replace("mostrar", "ocultar");  
         document.getElementById("add").classList.replace( "ocultar","mostrar"); 
         document.getElementById("adddiv").classList.replace("mostrar", "ocultar"); 
-
+        
  });
 
 
@@ -127,13 +187,16 @@ document.getElementById("all").addEventListener("click", () =>
  document.getElementById("Enviar").addEventListener("click", enviar);
 
 function reiniciar() {
-    inicio(); 
-    
-    document.getElementById("alldiv").classList.replace("ocultar", "mostrar");
-    document.getElementById("all").classList.replace("mostrar", "ocultar");  
-    document.getElementById("add").classList.replace( "ocultar","mostrar"); 
-    document.getElementById("adddiv").classList.replace("mostrar", "ocultar");     
    
+    
+     
+    document.getElementById("pregunta").value = "";
+    document.getElementById("resposta_0").value = "";
+    document.getElementById("resposta_1").value = "";
+    document.getElementById("resposta_2").value = "";
+    document.getElementById("resposta_3").value = "";
+    document.getElementById("resposta_correcta").value = "";
+    document.getElementById("imatge").value = "";
 
 
 
@@ -173,7 +236,7 @@ function enviar(){
     
         })
         .then(response => response.json())
-        .then(data => {alert(data), reiniciar()});
+        .then(data => {alert(data), inicio()});
 
     }
 

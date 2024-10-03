@@ -4,10 +4,6 @@
 include("../../conexio.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-   
-
-
-
     
     $datosRecibidos= file_get_contents('php://input');
     $respuestas=json_decode($datosRecibidos,true);
