@@ -1,6 +1,6 @@
 <?php
 // cargar datos
-include("conexio.php");
+include("./conexio.php");
 
 
 session_start();
