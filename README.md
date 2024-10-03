@@ -9,6 +9,11 @@ Un cop comenceu heu de canviar aquesta explicació amb la corresponent al vostre
 ## Docker & Docker compose
 El projecte s'ha de poder desplegar en mode desenvolupament simplement fent docker compose up
 
+## SPA
+  * Juego (QUIZ): ./web
+  * Administracion (CRUD): ./back/backend 
+
+
 # Aquest fitxer ha de contenir com a mínim:
  * Diego Mujica
  * Nom del projecte

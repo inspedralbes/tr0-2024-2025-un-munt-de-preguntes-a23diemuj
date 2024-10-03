@@ -6,6 +6,7 @@ document.getElementById("alldiv").classList.replace("ocultar", "mostrar");
         document.getElementById("all").classList.replace("mostrar", "ocultar");  
         document.getElementById("add").classList.replace( "ocultar","mostrar"); 
         document.getElementById("adddiv").classList.replace("mostrar", "ocultar"); 
+        
 fetch('./php/ver.php')
     .then(response => response.json())
     .then(data => verPreg(data));
