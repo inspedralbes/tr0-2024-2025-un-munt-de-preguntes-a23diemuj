@@ -29,7 +29,7 @@ for (let index = 0; index < data.preguntes.length; index++) {
    
    htmlString+= `<img src="${data.preguntes[index].imatge}" width='50%'> `;
    htmlString+=`<br><br>`;
-   htmlString+=`<p>${data.preguntes[index].pregunta}</p><br>`;
+   htmlString+=`<div class="pregunta">${data.preguntes[index].pregunta}</div><br>`;
    
    
    for (let index1 = 0; index1 < data.preguntes[index].respostes.length; index1++) {
