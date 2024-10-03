@@ -48,7 +48,11 @@ fetch('./php/ver.php')
             tr+=`</tr>`;
             document.getElementById("tabla").innerHTML+=tr;
 
-        });  
+        });
+        
+        document.getElementsByName("edit").forEach(element => {
+            element.addEventListener("click", edit)
+        });
       
         document.getElementsByName("rem").forEach(element => {
             element.addEventListener("click", borrar)
@@ -66,6 +70,11 @@ fetch('./php/ver.php')
     }
 
 }
+
+function edit() {
+    
+}
+
 
 
 document.getElementById("add").addEventListener("click", () =>{
