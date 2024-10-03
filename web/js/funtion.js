@@ -57,7 +57,7 @@ for (let index = 0; index < data.preguntes.length; index++) {
       htmlEstat.push(" ");
       
    }
-document.getElementById("empezar").addEventListener("click", PasarPreguntas); 
+document.getElementById("empezar").addEventListener("click",function(){PasarPreguntas()} ); 
 document.getElementById("enviar").addEventListener("click", enviarRespuestas);   
 document.getElementById("siguiente").addEventListener("click", PasarPreguntas);
 document.getElementById("anterior").addEventListener("click", RegregarPreguntas);
