@@ -14,7 +14,7 @@ if ($result->num_rows > 0) {
       $obj = new stdClass();
       $obj->id = $row["id"];
       $obj->pregunta = $row["pregunta"];
-      $obj->imagen = $row["imagen"];
+      $obj->imagen = $row["imatge"];
       $obj->resposta_0 = $row["resposta_0"];
       $obj->resposta_1 = $row["resposta_1"];
       $obj->resposta_2 = $row["resposta_2"];

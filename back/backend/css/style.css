@@ -13,6 +13,18 @@ table{
 
     margin-left: 10%;
     margin-right: 10%;
+    border-collapse: collapse;
+    text-align: center;
+}
+tr,td{
 
+    border: 1px solid black;
+    
+}
+td{
+
+    padding-top: 1%;
+    padding-bottom: 1%;
+    
 }
 

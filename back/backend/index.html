@@ -9,28 +9,15 @@
 </head>
 <body>
     <h1>CRUD</h1>
-    <button id="add">Añadir pregunta</button>
-    <button id="edit">Editar pregunta</button>
-    <button id="rem">Eliminar pregunta</button>
-    <button id="all">Ver todas las preguntas</button>
-    
+    <button id="add" class="mostrar">Añadir pregunta</button>
+    <button id="all" class="ocultar">Ver todas las preguntas</button>
+
     
 
 
-    <div id="alldiv" class="ocultar" > 
-        <table id="tabla" border="1" > 
-            <tr>
-                <th>ID</th>
-                <th>Pregunta</th>
-                <th>Respuesta 0</th>
-                <th>Respuesta 1</th>
-                <th>Respuesta 2</th>
-                <th>Respuesta 3</th>
-                <th>Respuesta Correcta</th>
-                <th>Imagen</th>
-
-                
-            </tr>
+    <div id="alldiv" class="mostrar" > 
+        <table id="tabla" > 
+            
 
 
         </table>
@@ -42,7 +29,7 @@
 
 <div id="adddiv" class="ocultar">
 
-
+    <br>
     <label for="pregunta">Pregunta: </label><br>
     <input type="text" id="pregunta" name="pregunta" required><br><br>
 
@@ -66,7 +53,7 @@
     <input type="text" id="resposta_correcta" name="resposta_correcta" required><br><br>
 
     <label for="imagen">Ruta Imagen: </label><br>
-    <input type="text" id="imagen" name="imagen" accept="imagen" required><br><br>
+    <input type="text" id="imatge" name="imatge"  required><br><br>
    
     <button id="Enviar"> Enviar</button>
 
@@ -74,13 +61,6 @@
 </div>
 
 
-
-<div id="editdiv">
-
-
-
-
-</div>
 
 
     <script src="./js/funtion.js"></script>
