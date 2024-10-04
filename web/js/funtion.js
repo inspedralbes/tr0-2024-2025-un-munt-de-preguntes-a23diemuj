@@ -80,13 +80,15 @@ document.getElementById("reiniciar").addEventListener("click", aux => location.r
 
 }
 
-
+let intervalo;
 function iniciarTemporizador(params) {
 
+   
    if(params==true){
-
       let tiempoRestante = 30;
-      let intervalo; 
+      
+
+     
         if (intervalo) return;
 
         intervalo = setInterval(() => {
@@ -102,6 +104,12 @@ function iniciarTemporizador(params) {
             }
         }, 1000); 
 
+      }else{
+         if (intervalo) {
+            clearInterval(intervalo); // Detener el intervalo
+            intervalo = null; // Restablecer la variable
+            
+        }
       }
     }
 
@@ -115,14 +123,14 @@ function reaccion(pregunta, respuesta){
       if(!(document.getElementById(pregunta.toString()+respuesta.toString()).classList.contains("presionado"))){
       document.getElementById(pregunta.toString()+respuesta.toString()).classList.add("presionado");
       arRespuestas[pregunta]=respuesta;
-      htmlEstat[pregunta]="*";
+      htmlEstat[pregunta]=`<div class="cuadrado-gris"></div>`; 
      
 
       }else{
 
       document.getElementById(pregunta.toString()+respuesta.toString()).classList.remove("presionado");
       arRespuestas[pregunta]=-1;
-      htmlEstat[pregunta]="-"; 
+      htmlEstat[pregunta]=" "; 
      
    }
 
@@ -139,7 +147,7 @@ function reaccion(pregunta, respuesta){
 
       document.getElementById(pregunta.toString()+respuesta.toString()).classList.add("presionado");
       arRespuestas[pregunta]=respuesta;
-      htmlEstat[pregunta]="*"; 
+      htmlEstat[pregunta]=`<div class="cuadrado-gris"></div>`; 
     
    }
 
@@ -147,9 +155,10 @@ function reaccion(pregunta, respuesta){
    
   
    auxReaccion=pregunta.toString()+respuesta.toString();
-   htmlEstat.forEach(element => {
-      document.getElementById("respuestas").innerHTML=element;
-   });
+   
+   
+      document.getElementById("respuestas").innerHTML=htmlEstat.join("");
+   
        
    
 
@@ -183,9 +192,7 @@ function PasarPreguntas(){
 
 if (contador==0){
 
-htmlEstat.forEach(element => {
-   document.getElementById("respuestas").innerHTML=element;
-});
+   document.getElementById("respuestas").innerHTML=htmlEstat.join("");
     
 
 
