@@ -3,12 +3,6 @@ Esquema mínim de carpetes pels projectes transversals
 
 És obligatori seguir aquesta estructura tot i que la podeu ampliar.
 
-## Atenció
-Un cop comenceu heu de canviar aquesta explicació amb la corresponent al vostre projecte (utilitzant markdown)
-
-## Docker & Docker compose
-El projecte s'ha de poder desplegar en mode desenvolupament simplement fent docker compose up
-
 ## SPA
   * Juego (QUIZ): ./web
   * Administracion (CRUD): ./back/backend 
@@ -16,9 +10,7 @@ El projecte s'ha de poder desplegar en mode desenvolupament simplement fent dock
 
 # Aquest fitxer ha de contenir com a mínim:
  * Diego Mujica
- * Nom del projecte
+ * QUIZ
  * Petita descripció
- * Adreça del gestor de tasques (taiga, jira, trello...)
- * Adreça del prototip gràfic del projecte (Penpot, figma, moqups...)
- * URL de producció (quan la tingueu)
- * Estat: (explicació d'en quin punt està)
+ * URL de producció http://a23diemujper.daw.inspedralbes.cat/web/ 
+ * Estat: Acabado

@@ -147,8 +147,10 @@ function reaccion(pregunta, respuesta){
    
   
    auxReaccion=pregunta.toString()+respuesta.toString();
-   const estat=document.getElementById("respuestas");
-   estat.innerHTML=htmlEstat;
+   htmlEstat.forEach(element => {
+      document.getElementById("respuestas").innerHTML=element;
+   });
+       
    
 
   }
@@ -180,7 +182,13 @@ function PasarPreguntas(){
 
 
 if (contador==0){
-document.getElementById("respuestas").innerHTML= htmlEstat;
+
+htmlEstat.forEach(element => {
+   document.getElementById("respuestas").innerHTML=element;
+});
+    
+
+
 document.getElementById("empezar").classList.add("ocultar");
 document.getElementById("titulo").classList.replace("titulo","ocultar");
 document.getElementById("siguiente").classList.replace("ocultar","mostrar");
