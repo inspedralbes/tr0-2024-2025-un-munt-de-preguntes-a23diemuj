@@ -1,13 +1,18 @@
 <?php
 
 
+// BASE DE DATOS SERVIDOR
+
+
 $servername = "localhost"; 
 $username = "a23diemujper_root"; 
 $password = "D1egomujic@"; 
 $dbname = "a23diemujper_preguntas"; 
 
-/*
 
+// BASE DE DATOS LOCAL
+
+/*
 $servername = "localhost"; 
 $username = "root"; 
 $password = "root"; 
