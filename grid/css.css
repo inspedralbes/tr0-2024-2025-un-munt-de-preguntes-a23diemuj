@@ -1,0 +1,45 @@
+#graella{
+
+    display: grid;
+    grid-template-areas: 
+    "superior superior cerca"
+    "menu cos lateral"
+    "refs cos lateral"
+    "peu peu peu";
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+
+}
+
+.info{
+    background-color: rgb(245, 196, 245);
+    border: 1px solid rgb(131, 0, 131);
+    margin: 10px;
+
+}
+#div1{
+
+    Font-size:150%;
+    grid-area: lateral;
+
+
+}
+
+#div2{
+    text-align: center;
+    grid-area: peu;
+}
+
+#div3{
+    color: rgb(6, 136, 153);
+    grid-area: refs;
+}
+#div4{
+    text-decoration:underline;
+    grid-area: cerca;
+}
+#div5{
+    text-transform:uppercase;
+    grid-area: menu;
+}
